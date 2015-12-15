@@ -76,7 +76,7 @@ artifacts/
 *_p.c
 *_i.h
 *.ilk
-*.meta
+#*.meta on le garde pour Unity
 *.obj
 *.pch
 *.pdb
