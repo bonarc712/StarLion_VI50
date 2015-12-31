@@ -3,9 +3,9 @@ using System.Collections;
 
 public class RotationControler : MonoBehaviour {
 
-	public float xSpeedR = 5;
-	public float ySpeedR = 5;
-	public float zSpeedR = 5;
+	public float xSpeedR = 1;
+	public float ySpeedR = 1;
+	public float zSpeedR = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class RotationControler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.Rotate (-Input.GetAxis ("Vertical") * xSpeedR, Input.GetAxis ("Horizontal") * ySpeedR,Input.GetAxis ("Horizontal") * zSpeedR );
+		transform.Rotate (-Input.GetAxis ("Vertical") * xSpeedR, -Input.GetAxis ("Horizontal") * ySpeedR,0 );
 	
 	}
 }
