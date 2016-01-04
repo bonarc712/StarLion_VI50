@@ -24,8 +24,12 @@ public class RadarController : MonoBehaviour {
 			radarObjects.Clear ();
 			List<Vector3> currentAsteroidPositions = AsteroideManager.GetCurrentAsteroidPositions ();
 			foreach (Vector3 position in currentAsteroidPositions) {
-				Transform newObject = GameObject.Instantiate (radarObjectPrefab, new Vector3 (this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.identity) as Transform;
+				//Transform newObject = GameObject.Instantiate (radarObjectPrefab) as Transform;
+				Transform newObject = GameObject.Instantiate (radarObjectPrefab) as Transform;
+				//Transform newObject = GameObject.Instantiate (radarObjectPrefab, new Vector3 (this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.identity) as Transform;
 				newObject.parent = this.gameObject.transform;
+				newObject.localPosition = new Vector3(0,0,0.005f);
+				//newObject.localRotation = new Quaternion(
 				radarObjects.Add(newObject.gameObject);
 			}
 			counter = 0;

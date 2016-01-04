@@ -4,16 +4,21 @@ using System.Collections;
 public class AsteroideBehaviour : ObstacleBehaviour {
 
 	private GameObject asteroid;
-	public GameObject coco;
 	public float speed = 2;
+	public Vector3 rotationVector;
 
 	// Use this for initialization
 	void Start () {
 		asteroid = this.gameObject;
+		int x = Random.Range (-3, 3);
+		int y = Random.Range (-3, 3);
+		int z = Random.Range (-3, 3);
+		rotationVector = new Vector3 (x, y, z);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		asteroid.transform.Rotate (rotationVector);
 		Vector3 anglesToFollow = CinematicMovementManager.GetCurrentAngles();
 		//Debug.Log (anglesToFollow.x);
 		//asteroid.transform.Translate (0, speed, 0);
